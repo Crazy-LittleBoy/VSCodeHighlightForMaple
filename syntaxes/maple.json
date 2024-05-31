@@ -3,7 +3,8 @@
     "fileTypes": [
         "mpl",
         "mi",
-        "mm"
+        "mm"，
+        "ipynb"
     ],
     "name": "maple",
     "patterns": [
