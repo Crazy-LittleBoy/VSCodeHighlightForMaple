@@ -19,7 +19,8 @@
                 "extensions": [
                     ".mpl",
                     ".mi",
-                    ".mm"
+                    ".mm",
+                    ".ipynb"
                 ],
                 "configuration": "maple.configuration.json"
             }
