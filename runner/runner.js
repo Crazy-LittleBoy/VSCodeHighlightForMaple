@@ -37,16 +37,19 @@ function getSelectedCodeAndRun() {
     var isQuiet = !config.get("echo");
     var runOption = isQuiet ? ["-q", tmpFile] : [tmpFile];
     var p = exec(cmaplePath, runOption, (error, stdout, stderr) => {
-        var lines = stdout.split(/[\r\n]+/g);
-        if (isQuiet) {
+        if (error) {
+            console.error(`执行失败: ${error}`);
+            return;
+        }
+        stdout.on('data', (data) => {
+            var lines = data.split(/[\r\n]+/g);
             for (var i = 0; i < lines.length; i++) {
                 outputChannel.appendLine(lines[i]);
             }
-        } else {
-            for (var i = 7; i < lines.length - 3; i++) {
-                outputChannel.appendLine(lines[i]);
-            }
-        }
+        });
+        stderr.on('data', (data) => {
+            console.error(`错误输出: ${data}`);
+        });
     });
     p.on('close', function() {
         fs.unlinkSync(tmpFile);

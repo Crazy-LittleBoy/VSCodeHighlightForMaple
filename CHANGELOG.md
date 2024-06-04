@@ -1,4 +1,6 @@
 # Change Log
+## 1.2.9
++ stream output
 ## 1.2.8 
 + update the built-in theme files of vscode
 + fix the snippets of `$ifdef`

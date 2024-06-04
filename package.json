@@ -1,6 +1,6 @@
 {
     "name": "maple",
-    "version": "1.2.8.1",
+    "version": "1.2.9",
     "publisher": "yjt",
     "description": "Maple support for vscode, including: Syntaxes Highlight, Snippets, and Maple Code Runner",
     "engines": {
@@ -59,7 +59,7 @@
         "keybindings": [
             {
                 "command": "maple.run",
-                "key": "shift+alt+m",
+                "key": "shift+enter",
                 "when": "resourceLangId == maple"
             }
         ],
@@ -86,7 +86,7 @@
             "properties": {
                 "maple.cmaplePath": {
                     "type": "string",
-                    "default": "D:/Maple 2016/bin.X86_64_WINDOWS/cmaple.exe",
+                    "default": "E:/Maple2024/bin.X86_64_WINDOWS/cmaple.exe",
                     "description": "Set path of cmaple.exe"
                 },
                 "maple.isPrettyPrint": {
@@ -96,7 +96,7 @@
                 },
                 "maple.echo": {
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "true for output with echo the command"
                 }
             }
